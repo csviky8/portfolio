@@ -3,6 +3,7 @@ import { Sora, Fira_Code } from 'next/font/google'
 import './globals.css'
 import Script from 'next/script'
 import { ThemeProvider } from '@/components/ThemeProvider'
+import AnimatedBackground from '@/components/AnimatedBackground'
 
 const sora = Sora({ subsets: ['latin'], variable: '--font-sora', display: 'swap' })
 const firaCode = Fira_Code({ subsets: ['latin'], variable: '--font-fira', display: 'swap' })
@@ -39,6 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           `}
         </Script>
         <ThemeProvider>
+          <AnimatedBackground />
           {children}
         </ThemeProvider>
       </body>

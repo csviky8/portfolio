@@ -219,6 +219,41 @@ body::before {
   50% { box-shadow: 0 0 40px var(--brand-glow), 0 0 60px rgba(167, 139, 250, 0.2); }
 }
 
+/* ── Aurora blobs ── */
+@keyframes aurora-1 {
+  0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+  25% { transform: translate(80px, -60px) scale(1.1) rotate(90deg); }
+  50% { transform: translate(-40px, 80px) scale(0.95) rotate(180deg); }
+  75% { transform: translate(60px, 40px) scale(1.05) rotate(270deg); }
+}
+@keyframes aurora-2 {
+  0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+  33% { transform: translate(-70px, 50px) scale(1.15) rotate(120deg); }
+  66% { transform: translate(50px, -70px) scale(0.9) rotate(240deg); }
+}
+@keyframes aurora-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-50px, -40px) scale(1.2); }
+}
+
+.aurora-1 { animation: aurora-1 18s ease-in-out infinite; }
+.aurora-2 { animation: aurora-2 22s ease-in-out infinite; }
+.aurora-3 { animation: aurora-3 15s ease-in-out infinite; }
+
+/* ── Beam sweep ── */
+@keyframes beam {
+  0% { transform: translateX(-100%) skewX(-15deg); }
+  100% { transform: translateX(400%) skewX(-15deg); }
+}
+.beam {
+  position: absolute;
+  width: 40%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(108, 99, 255, 0.6), rgba(167,139,250,0.8), transparent);
+  animation: beam 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
 /* ── AI gradient text ── */
 .ai-gradient {
   background: linear-gradient(135deg, #6c63ff 0%, #a78bfa 40%, #e879f9 70%, #6c63ff 100%);

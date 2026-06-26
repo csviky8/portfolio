@@ -3,12 +3,6 @@ import { useEffect, useState, useRef } from 'react'
 
 const roles = ['Senior PHP Developer', 'Laravel Specialist', 'Full-Stack Engineer', 'Vue 3 Developer']
 
-const orbs = [
-  { size: 500, top: '-10%', left: '-10%', color: 'rgba(108,99,255,0.12)', duration: '12s' },
-  { size: 400, bottom: '-5%', right: '-8%', color: 'rgba(167,139,250,0.1)', duration: '15s' },
-  { size: 300, top: '40%', right: '15%', color: 'rgba(232,121,249,0.07)', duration: '10s' },
-]
-
 function useCounter(target: number, active: boolean) {
   const [count, setCount] = useState(0)
   useEffect(() => {
@@ -83,23 +77,30 @@ export default function Hero() {
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden dot-bg">
 
-      {/* Orbs */}
-      {orbs.map((o, i) => (
-        <div key={i} className="absolute rounded-full pointer-events-none"
-          style={{
-            width: o.size, height: o.size,
-            top: (o as any).top, left: (o as any).left,
-            bottom: (o as any).bottom, right: (o as any).right,
-            background: `radial-gradient(circle, ${o.color} 0%, transparent 70%)`,
-            animation: `orb-pulse ${o.duration} ease-in-out infinite`,
-            animationDelay: `${i * 1.5}s`,
-          }}
-        />
-      ))}
+      {/* Aurora blobs */}
+      <div className="aurora-1 absolute pointer-events-none" style={{
+        width: 700, height: 700, top: '-20%', left: '-15%',
+        background: 'radial-gradient(circle, rgba(108,99,255,0.13) 0%, rgba(167,139,250,0.07) 40%, transparent 70%)',
+        borderRadius: '50%', filter: 'blur(40px)',
+      }} />
+      <div className="aurora-2 absolute pointer-events-none" style={{
+        width: 600, height: 600, bottom: '-15%', right: '-10%',
+        background: 'radial-gradient(circle, rgba(232,121,249,0.1) 0%, rgba(108,99,255,0.08) 40%, transparent 70%)',
+        borderRadius: '50%', filter: 'blur(50px)',
+      }} />
+      <div className="aurora-3 absolute pointer-events-none" style={{
+        width: 400, height: 400, top: '30%', right: '20%',
+        background: 'radial-gradient(circle, rgba(56,189,248,0.08) 0%, transparent 70%)',
+        borderRadius: '50%', filter: 'blur(30px)',
+      }} />
 
-      {/* Mesh lines */}
+      {/* Beam sweeps */}
+      <div className="beam" style={{ top: '25%', animationDelay: '0s' }} />
+      <div className="beam" style={{ top: '60%', animationDelay: '3s' }} />
+
+      {/* Top radial */}
       <div className="absolute inset-0 pointer-events-none" style={{
-        background: 'radial-gradient(ellipse 80% 60% at 50% -10%, rgba(108,99,255,0.15) 0%, transparent 65%)',
+        background: 'radial-gradient(ellipse 80% 60% at 50% -10%, rgba(108,99,255,0.18) 0%, transparent 65%)',
       }} />
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 py-32 text-center">
