@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand: #16b570;
+  --brand-dim: #0a9259;
+  --bg: #050d0a;
+  --bg2: #0c1710;
+  --bg3: #111e15;
+  --border: rgba(22, 181, 112, 0.15);
+  --text: #e8f5ee;
+  --text-muted: #7aad90;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+::selection { background: rgba(22, 181, 112, 0.3); color: #fff; }
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--brand); border-radius: 2px; }
+
+.section-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.section-reveal.visible { opacity: 1; transform: translateY(0); }
+
+.glow-text { text-shadow: 0 0 40px rgba(22, 181, 112, 0.4); }
+
+.card-hover {
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  border-color: rgba(22, 181, 112, 0.5) !important;
+  box-shadow: 0 12px 40px rgba(22, 181, 112, 0.12);
+}
+
+.nav-link {
+  position: relative;
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--brand);
+  transition: width 0.2s ease;
+}
+.nav-link:hover { color: var(--brand); }
+.nav-link:hover::after { width: 100%; }
+
+.terminal-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  background: var(--brand);
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  animation: blink 1s step-end infinite;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(22, 181, 112, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(22, 181, 112, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-reveal { opacity: 1; transform: none; transition: none; }
+  .card-hover:hover { transform: none; }
+  .terminal-cursor { animation: none; }
+}
