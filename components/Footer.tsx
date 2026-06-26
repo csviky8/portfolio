@@ -11,6 +11,7 @@ export default function Footer() {
   }, [])
 
   return (
+    <>
     <footer className="py-10" style={{ borderTop: '1px solid var(--glass-border)', backgroundColor: 'var(--bg)', position: 'relative', zIndex: 1 }}>
       <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
         <a href="#" className="font-mono text-sm font-semibold flex items-center gap-1.5">
@@ -39,21 +40,38 @@ export default function Footer() {
           ))}
         </div>
       </div>
-
-      {/* Back to top */}
-      <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className="fixed bottom-6 right-6 w-11 h-11 rounded-2xl flex items-center justify-center transition-all duration-300 btn-primary"
-        style={{
-          opacity: visible ? 1 : 0,
-          pointerEvents: visible ? 'auto' : 'none',
-          transform: visible ? 'translateY(0)' : 'translateY(16px)',
-          zIndex: 999,
-        }}
-        aria-label="Back to top">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-          <polyline points="18 15 12 9 6 15"/>
-        </svg>
-      </button>
     </footer>
+
+    {/* Back to top — outside footer to avoid clipping */}
+    <button
+      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      aria-label="Back to top"
+      style={{
+        position: 'fixed',
+        bottom: '24px',
+        right: '24px',
+        zIndex: 9999,
+        opacity: visible ? 1 : 0,
+        pointerEvents: visible ? 'auto' : 'none',
+        transform: visible ? 'translateY(0)' : 'translateY(16px)',
+        transition: 'opacity 0.3s ease, transform 0.3s ease',
+        width: '44px',
+        height: '44px',
+        borderRadius: '14px',
+        background: 'linear-gradient(135deg, #6c63ff, #a78bfa)',
+        color: '#fff',
+        border: 'none',
+        cursor: 'pointer',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        boxShadow: '0 8px 24px rgba(108,99,255,0.4)',
+      }}
+    >
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+        <polyline points="18 15 12 9 6 15"/>
+      </svg>
+    </button>
+    </>
   )
 }
