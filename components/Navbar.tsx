@@ -27,9 +27,10 @@ export default function Navbar() {
         scrolled ? 'py-3' : 'py-5'
       }`}
       style={scrolled ? {
-        background: 'rgba(8, 11, 20, 0.85)',
+        background: theme === 'dark' ? 'rgba(8, 11, 20, 0.88)' : 'rgba(250, 250, 250, 0.88)',
         backdropFilter: 'blur(20px)',
-        borderBottom: '1px solid rgba(108, 99, 255, 0.1)',
+        WebkitBackdropFilter: 'blur(20px)',
+        borderBottom: '1px solid var(--glass-border)',
       } : {}}
     >
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
