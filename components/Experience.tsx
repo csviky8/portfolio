@@ -80,7 +80,7 @@ export default function Experience() {
   }, [])
 
   return (
-    <section id="experience" ref={ref} className="py-28 max-w-6xl mx-auto px-6">
+    <section id="experience" ref={ref} className="py-28 max-w-6xl mx-auto px-6" style={{ position: 'relative', zIndex: 1, backgroundColor: 'var(--bg)' }}>
       <div className="section-reveal mb-14">
         <div className="flex items-center gap-4 mb-2">
           <span className="font-mono text-xs px-2 py-1 rounded-md" style={{ background: 'rgba(108,99,255,0.15)', color: 'var(--brand-2)' }}>03</span>

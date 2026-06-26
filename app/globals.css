@@ -360,7 +360,19 @@ body::before {
   background-size: 28px 28px;
 }
 
-/* ── Timeline ── */
+/* ── Section backgrounds (block canvas bleed-through) ── */
+.section-solid {
+  position: relative;
+  z-index: 1;
+  background-color: var(--bg);
+}
+.section-solid-2 {
+  position: relative;
+  z-index: 1;
+  background-color: var(--bg2);
+}
+
+body > * { position: relative; z-index: 1; } */
 .timeline-line {
   position: absolute;
   left: 19px;

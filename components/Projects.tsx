@@ -68,7 +68,7 @@ export default function Projects() {
   }, [])
 
   return (
-    <section id="projects" ref={ref} className="py-28" style={{ background: 'var(--bg2)' }}>
+    <section id="projects" ref={ref} className="py-28" style={{ position: 'relative', zIndex: 1, backgroundColor: 'var(--bg2)' }}>
       <div className="max-w-6xl mx-auto px-6">
         <div className="section-reveal mb-14">
           <div className="flex items-center gap-4 mb-2">

@@ -11,7 +11,7 @@ export default function Footer() {
   }, [])
 
   return (
-    <footer className="py-10" style={{ borderTop: '1px solid var(--glass-border)', background: 'var(--bg)' }}>
+    <footer className="py-10" style={{ borderTop: '1px solid var(--glass-border)', backgroundColor: 'var(--bg)', position: 'relative', zIndex: 1 }}>
       <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
         <a href="#" className="font-mono text-sm font-semibold flex items-center gap-1.5">
           <span className="w-6 h-6 rounded-md flex items-center justify-center text-xs font-bold"
