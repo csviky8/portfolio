@@ -2,14 +2,15 @@
 import { useEffect, useRef } from 'react'
 
 const info = [
-  { label: 'Full Name', value: 'Vignesh R' },
-  { label: 'Email', value: 'csviky8@gmail.com', href: 'mailto:csviky8@gmail.com' },
-  { label: 'Phone', value: '+91 90475 83566', href: 'tel:+919047583566' },
-  { label: 'Location', value: 'Chennai, India' },
-  { label: 'Date of Birth', value: '19 March 1996' },
-  { label: 'Languages', value: 'Tamil, English, Kannada' },
-  { label: 'LinkedIn', value: 'vignesh-r-4108b7187', href: 'https://linkedin.com/in/vignesh-r-4108b7187' },
+  { label: 'Location', value: 'Chennai, India', icon: '📍' },
+  { label: 'Email', value: 'csviky8@gmail.com', href: 'mailto:csviky8@gmail.com', icon: '✉️' },
+  { label: 'Phone', value: '+91 90475 83566', href: 'tel:+919047583566', icon: '📞' },
+  { label: 'DOB', value: '19 March 1996', icon: '🗓️' },
+  { label: 'Languages', value: 'Tamil, English, Kannada', icon: '🌐' },
+  { label: 'LinkedIn', value: 'vignesh-r-4108b7187', href: 'https://linkedin.com/in/vignesh-r-4108b7187', icon: '🔗' },
 ]
+
+const strengths = ['Communication', 'Team Player', 'Problem Solving', 'Adaptability', 'Work Under Pressure', 'Self-motivated']
 
 export default function About() {
   const ref = useRef<HTMLElement>(null)
@@ -24,46 +25,39 @@ export default function About() {
   }, [])
 
   return (
-    <section id="about" ref={ref} className="py-24 max-w-6xl mx-auto px-6">
-      <div className="section-reveal">
-        <div className="flex items-center gap-3 mb-3">
-          <span className="font-mono text-sm" style={{ color: 'var(--brand)' }}>01.</span>
+    <section id="about" ref={ref} className="py-28 max-w-6xl mx-auto px-6">
+      <div className="section-reveal mb-14">
+        <div className="flex items-center gap-4 mb-2">
+          <span className="font-mono text-xs px-2 py-1 rounded-md" style={{ background: 'rgba(108,99,255,0.15)', color: 'var(--brand-2)' }}>01</span>
           <h2 className="text-3xl md:text-4xl font-bold" style={{ color: 'var(--text)' }}>About Me</h2>
-          <div className="flex-1 h-px" style={{ background: 'var(--border)' }} />
+          <div className="section-line" />
         </div>
-        <p className="text-sm mb-12" style={{ color: 'var(--text-muted)' }}>Who I am and what I bring to the table</p>
+        <p className="text-sm ml-10" style={{ color: 'var(--text-muted)' }}>Who I am and what I bring to the table</p>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-12 items-start">
-        {/* Left - bio */}
+      <div className="grid md:grid-cols-2 gap-14 items-start">
+        {/* Left */}
         <div className="reveal-left space-y-5">
-          <p style={{ color: 'var(--text-muted)', lineHeight: '1.8' }}>
-            I&apos;m a <span style={{ color: 'var(--text)' }}>Senior PHP Developer</span> with over{' '}
-            <span style={{ color: 'var(--brand)' }}>8 years of hands-on experience</span> building robust
+          <p style={{ color: 'var(--text-muted)', lineHeight: '1.9' }}>
+            I&apos;m a <span style={{ color: 'var(--text)' }} className="font-semibold">Senior PHP Developer</span> with over{' '}
+            <span style={{ color: 'var(--brand-2)' }} className="font-semibold">8 years of hands-on experience</span> building robust
             web applications, CRMs, and enterprise-grade systems from the ground up.
           </p>
-          <p style={{ color: 'var(--text-muted)', lineHeight: '1.8' }}>
-            My primary focus is delivering complete, polished user interfaces for both mobile and desktop
-            platforms — with a sharp eye on{' '}
-            <span style={{ color: 'var(--text)' }}>performance, scalability, and user experience</span>.
-            I&apos;ve worked across the full stack using Laravel, Vue 3, ReactJS, Flutter, and more.
+          <p style={{ color: 'var(--text-muted)', lineHeight: '1.9' }}>
+            My primary focus is delivering complete, polished interfaces for both mobile and desktop platforms — with a sharp eye on{' '}
+            <span style={{ color: 'var(--text)' }} className="font-medium">performance, scalability, and user experience</span>.
           </p>
-          <p style={{ color: 'var(--text-muted)', lineHeight: '1.8' }}>
-            Currently at <span style={{ color: 'var(--brand)' }}>Trikon Telesoft Solutions</span> in Chennai,
-            where I lead CRM development and manage the full customer journey — from lead generation to client
-            onboarding and support.
+          <p style={{ color: 'var(--text-muted)', lineHeight: '1.9' }}>
+            Currently at <span style={{ color: 'var(--brand-2)' }} className="font-semibold">Trikon Telesoft Solutions</span> in Chennai,
+            leading CRM development and managing the full customer journey.
           </p>
 
-          {/* Personal skills */}
           <div className="pt-4">
-            <h3 className="text-sm font-semibold mb-3" style={{ color: 'var(--text)' }}>Personal Strengths</h3>
+            <p className="text-xs font-semibold mb-3 uppercase tracking-widest" style={{ color: 'var(--text-dim)' }}>Personal Strengths</p>
             <div className="flex flex-wrap gap-2">
-              {['Communication', 'Team Player', 'Problem Solving', 'Adaptability', 'Work Under Pressure', 'Self-motivated'].map((s) => (
-                <span
-                  key={s}
-                  className="px-3 py-1 rounded-full text-xs border tag-hover"
-                  style={{ borderColor: 'var(--border)', color: 'var(--text-muted)', background: 'var(--bg3)' }}
-                >
+              {strengths.map((s) => (
+                <span key={s} className="tag-pill px-3 py-1.5 rounded-full text-xs font-medium glass-card"
+                  style={{ color: 'var(--text-muted)', border: '1px solid var(--glass-border)' }}>
                   {s}
                 </span>
               ))}
@@ -71,31 +65,23 @@ export default function About() {
           </div>
         </div>
 
-        {/* Right - info card */}
+        {/* Right */}
         <div className="reveal-right">
-          <div
-            className="rounded-2xl border p-6 space-y-4"
-            style={{ borderColor: 'var(--border)', background: 'var(--bg2)' }}
-          >
-            {info.map(({ label, value, href }) => (
-              <div key={label} className="flex items-start gap-4 py-2 border-b last:border-0" style={{ borderColor: 'var(--border)' }}>
-                <span className="text-xs font-mono w-28 shrink-0 pt-0.5" style={{ color: 'var(--text-muted)' }}>
-                  {label}
-                </span>
+          <div className="rounded-2xl p-6 space-y-1 glass-card">
+            {info.map(({ label, value, href, icon }) => (
+              <div key={label} className="flex items-center gap-4 py-3 border-b last:border-0"
+                style={{ borderColor: 'var(--glass-border)' }}>
+                <span className="text-base w-6 text-center flex-shrink-0">{icon}</span>
+                <span className="text-xs font-mono w-20 shrink-0" style={{ color: 'var(--text-dim)' }}>{label}</span>
                 {href ? (
-                  <a
-                    href={href}
-                    target={href.startsWith('http') ? '_blank' : undefined}
+                  <a href={href} target={href.startsWith('http') ? '_blank' : undefined}
                     rel="noopener noreferrer"
-                    className="text-sm font-medium transition-colors hover:underline"
-                    style={{ color: 'var(--brand)' }}
-                  >
+                    className="text-sm font-medium transition-colors hover:underline truncate"
+                    style={{ color: 'var(--brand-2)' }}>
                     {value}
                   </a>
                 ) : (
-                  <span className="text-sm font-medium" style={{ color: 'var(--text)' }}>
-                    {value}
-                  </span>
+                  <span className="text-sm font-medium" style={{ color: 'var(--text)' }}>{value}</span>
                 )}
               </div>
             ))}

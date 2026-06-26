@@ -1,6 +1,10 @@
 import type { Metadata } from 'next'
+import { Sora, Fira_Code } from 'next/font/google'
 import './globals.css'
 import Script from 'next/script'
+
+const sora = Sora({ subsets: ['latin'], variable: '--font-sora', display: 'swap' })
+const firaCode = Fira_Code({ subsets: ['latin'], variable: '--font-fira', display: 'swap' })
 
 export const metadata: Metadata = {
   title: 'Vignesh R | Senior PHP Developer',
@@ -22,8 +26,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className="grid-bg">
+    <html lang="en" className={`scroll-smooth ${sora.variable} ${firaCode.variable}`}>
+      <body className="dot-bg">
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-3DGMNR215E" strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">
           {`

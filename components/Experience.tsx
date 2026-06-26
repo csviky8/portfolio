@@ -12,7 +12,6 @@ const experiences = [
       'Leading CRM development for Metaclick & Metaweb — managing complete customer lifecycle from lead generation to support.',
       'Architecting scalable Laravel 9 solutions handling sales automation, quotation management, and contract workflows.',
       'Improving team productivity through automated task pipelines and cross-team coordination tools.',
-      'Transferred from FOODHUB as a key resource to this partner company.',
     ],
     tech: ['Laravel 9', 'MySQL', 'Vue 3', 'REST API'],
   },
@@ -25,7 +24,6 @@ const experiences = [
     points: [
       'Built OCR Compact Car Rental — a full booking platform for Queensland, Australia with real-time vehicle availability.',
       'Integrated secure payment gateways and dynamic pricing engine for the car rental platform.',
-      'Developed responsive web applications with Core PHP and API integrations.',
       'Optimized application performance, improving page load and customer engagement metrics.',
     ],
     tech: ['Core PHP', 'API Integration', 'MySQL', 'HTML/CSS'],
@@ -52,7 +50,6 @@ const experiences = [
     points: [
       'Developed Tala Transport CMS — a responsive content management system using AngularJS, PHP, and MySQL.',
       'Built Geely Publish CMS — managing articles, news, and galleries with UI/UX design and email templates.',
-      'Ensured cross-browser compatibility and guided team members on frontend best practices.',
     ],
     tech: ['AngularJS', 'PHP', 'MySQL', 'HTML/CSS'],
   },
@@ -83,82 +80,68 @@ export default function Experience() {
   }, [])
 
   return (
-    <section id="experience" ref={ref} className="py-24 max-w-6xl mx-auto px-6">
-      <div className="section-reveal mb-12">
-        <div className="flex items-center gap-3 mb-3">
-          <span className="font-mono text-sm" style={{ color: 'var(--brand)' }}>03.</span>
+    <section id="experience" ref={ref} className="py-28 max-w-6xl mx-auto px-6">
+      <div className="section-reveal mb-14">
+        <div className="flex items-center gap-4 mb-2">
+          <span className="font-mono text-xs px-2 py-1 rounded-md" style={{ background: 'rgba(108,99,255,0.15)', color: 'var(--brand-2)' }}>03</span>
           <h2 className="text-3xl md:text-4xl font-bold" style={{ color: 'var(--text)' }}>Experience</h2>
-          <div className="flex-1 h-px" style={{ background: 'var(--border)' }} />
+          <div className="section-line" />
         </div>
-        <p className="text-sm" style={{ color: 'var(--text-muted)' }}>8+ years across 5 companies</p>
+        <p className="text-sm ml-10" style={{ color: 'var(--text-muted)' }}>8+ years across 5 companies</p>
       </div>
 
       <div className="relative">
-        {/* Timeline line */}
-        <div
-          className="absolute left-4 md:left-8 top-0 bottom-0 w-px"
-          style={{ background: 'linear-gradient(to bottom, var(--brand), transparent)' }}
-        />
+        <div className="timeline-line hidden md:block" />
 
-        <div className="space-y-10">
+        <div className="space-y-6">
           {experiences.map((exp, i) => (
-            <div
-              key={i}
-              className="section-reveal relative flex gap-6 md:gap-12 pl-12 md:pl-20"
-              style={{ transitionDelay: `${i * 100}ms` }}
-            >
-              {/* Dot */}
-              <div
-                className="absolute left-2.5 md:left-6 top-2 w-4 h-4 rounded-full border-2 z-10"
-                style={{
-                  borderColor: exp.current ? 'var(--brand)' : 'var(--border)',
-                  background: exp.current ? 'var(--brand)' : 'var(--bg)',
-                  boxShadow: exp.current ? '0 0 12px rgba(37,99,235,0.3)' : 'none',
-                }}
-              />
+            <div key={i} className="section-reveal relative flex gap-8 md:pl-14"
+              style={{ transitionDelay: `${i * 100}ms` }}>
 
-              <div
-                className="flex-1 rounded-2xl border p-5 md:p-6 card-hover"
-                style={{ borderColor: 'var(--border)', background: 'var(--bg2)' }}
-              >
-                <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
+              {/* Dot */}
+              <div className={`hidden md:flex absolute left-2 top-5 w-6 h-6 rounded-full items-center justify-center z-10 ${exp.current ? 'timeline-dot' : ''}`}
+                style={{
+                  background: exp.current ? 'linear-gradient(135deg, #6c63ff, #a78bfa)' : 'var(--bg3)',
+                  border: `2px solid ${exp.current ? '#6c63ff' : 'var(--glass-border)'}`,
+                }}>
+                {exp.current && <span className="w-2 h-2 rounded-full bg-white" />}
+              </div>
+
+              <div className="flex-1 glow-card rounded-2xl p-6 glass-card" style={{ borderRadius: '16px' }}>
+                <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
                   <div>
-                    <div className="flex items-center gap-2 flex-wrap">
-                      <h3 className="font-semibold" style={{ color: 'var(--text)' }}>{exp.role}</h3>
+                    <div className="flex items-center gap-2 flex-wrap mb-1">
+                      <h3 className="font-bold text-base" style={{ color: 'var(--text)' }}>{exp.role}</h3>
                       {exp.current && (
-                        <span
-                          className="text-xs px-2 py-0.5 rounded-full font-mono"
-                          style={{ background: 'rgba(37,99,235,0.1)', color: 'var(--brand)' }}
-                        >
+                        <span className="text-xs px-2.5 py-0.5 rounded-full font-mono font-semibold"
+                          style={{ background: 'rgba(108,99,255,0.2)', color: 'var(--brand-2)' }}>
                           Current
                         </span>
                       )}
                     </div>
-                    <p className="text-sm mt-0.5" style={{ color: 'var(--brand)' }}>
+                    <p className="text-sm font-medium" style={{ color: 'var(--brand-2)' }}>
                       {exp.company} · {exp.location}
                     </p>
                   </div>
-                  <span className="text-xs font-mono px-3 py-1 rounded-lg border" style={{ borderColor: 'var(--border)', color: 'var(--text-muted)' }}>
+                  <span className="text-xs font-mono px-3 py-1.5 rounded-xl glass-card"
+                    style={{ color: 'var(--text-muted)', border: '1px solid var(--glass-border)' }}>
                     {exp.period}
                   </span>
                 </div>
 
                 <ul className="space-y-2 mb-4">
                   {exp.points.map((p, j) => (
-                    <li key={j} className="flex gap-2 text-sm" style={{ color: 'var(--text-muted)' }}>
-                      <span style={{ color: 'var(--brand)', marginTop: '4px', flexShrink: 0 }}>▸</span>
+                    <li key={j} className="flex gap-2.5 text-sm" style={{ color: 'var(--text-muted)' }}>
+                      <span style={{ color: 'var(--brand)', marginTop: '5px', flexShrink: 0, fontSize: '8px' }}>◆</span>
                       {p}
                     </li>
                   ))}
                 </ul>
 
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 pt-4" style={{ borderTop: '1px solid var(--glass-border)' }}>
                   {exp.tech.map((t) => (
-                    <span
-                      key={t}
-                  className="text-xs px-2 py-1 rounded-md font-mono border tag-hover"
-                      style={{ borderColor: 'var(--border)', color: 'var(--text-muted)', background: 'var(--bg3)' }}
-                    >
+                    <span key={t} className="tag-pill text-xs px-3 py-1 rounded-full font-mono glass-card"
+                      style={{ color: 'var(--text-muted)', border: '1px solid var(--glass-border)' }}>
                       {t}
                     </span>
                   ))}
