@@ -47,6 +47,7 @@ export default function Footer() {
           opacity: visible ? 1 : 0,
           pointerEvents: visible ? 'auto' : 'none',
           transform: visible ? 'translateY(0)' : 'translateY(16px)',
+          zIndex: 999,
         }}
         aria-label="Back to top">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
