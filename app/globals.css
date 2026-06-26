@@ -372,8 +372,9 @@ body::before {
   background-color: var(--bg2);
 }
 
-body > * { position: relative; z-index: 1; } */
-.timeline-line {
+body > * { position: relative; z-index: 1; }
+
+/* ── Timeline ── */
   position: absolute;
   left: 19px;
   top: 0; bottom: 0;
