@@ -94,7 +94,7 @@ export default function Contact() {
               >
                 <div
                   className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors"
-                  style={{ background: 'rgba(22,181,112,0.1)', color: 'var(--brand)' }}
+                  style={{ background: 'rgba(37,99,235,0.08)', color: 'var(--brand)' }}
                 >
                   {c.icon}
                 </div>
@@ -107,7 +107,7 @@ export default function Contact() {
 
             <div
               className="mt-6 p-5 rounded-xl border"
-              style={{ borderColor: 'var(--border)', background: 'rgba(22,181,112,0.04)' }}
+              style={{ borderColor: 'var(--border)', background: 'rgba(37,99,235,0.04)' }}
             >
               <p className="text-sm font-medium mb-1" style={{ color: 'var(--brand)' }}>
                 📍 Chennai, India
@@ -183,7 +183,7 @@ export default function Contact() {
                 type="submit"
                 disabled={status !== 'idle'}
                 className="w-full py-3 rounded-xl font-semibold text-sm transition-all duration-200 hover:opacity-90 disabled:opacity-60"
-                style={{ background: 'var(--brand)', color: '#050d0a' }}
+                style={{ background: 'var(--brand)', color: '#ffffff' }}
               >
                 {status === 'idle' && 'Send Message'}
                 {status === 'sending' && 'Opening mail…'}

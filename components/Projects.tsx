@@ -14,7 +14,7 @@ const projects = [
       'Contract management with digital approvals',
       'Multi-client support (Metaclick + Metaweb)',
     ],
-    color: '#16b570',
+    color: '#2563eb',
     icon: '🏢',
   },
   {

@@ -39,30 +39,14 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden grid-bg"
     >
       {/* Radial glow */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse 60% 50% at 50% 0%, rgba(99,102,241,0.12) 0%, transparent 70%)',
-        }}
-      />
-
-      {/* Floating orbs */}
-      <div
-        className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full pointer-events-none"
-        style={{
-          background: 'radial-gradient(circle, rgba(99,102,241,0.06) 0%, transparent 70%)',
-          animation: 'float 8s ease-in-out infinite',
-        }}
-      />
-      <div
-        className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full pointer-events-none"
-        style={{
-          background: 'radial-gradient(circle, rgba(99,102,241,0.04) 0%, transparent 70%)',
-          animation: 'float 12s ease-in-out infinite reverse',
+            'radial-gradient(ellipse 60% 50% at 50% 0%, rgba(37,99,235,0.06) 0%, transparent 70%)',
         }}
       />
 
@@ -78,8 +62,8 @@ export default function Hero() {
         <div
           className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono mb-8 border"
           style={{
-            borderColor: 'var(--border)',
-            background: 'rgba(99,102,241,0.06)',
+            borderColor: 'rgba(37,99,235,0.2)',
+            background: 'rgba(37,99,235,0.06)',
             color: 'var(--brand)',
           }}
         >
@@ -92,7 +76,7 @@ export default function Hero() {
 
         {/* Name */}
         <h1
-          className="text-5xl md:text-7xl font-bold mb-4 tracking-tight glow-text"
+          className="text-5xl md:text-7xl font-bold mb-4 tracking-tight"
           style={{ color: 'var(--text)' }}
         >
           Vignesh R
@@ -144,15 +128,15 @@ export default function Hero() {
         <div className="flex flex-wrap items-center justify-center gap-4">
           <a
             href="#projects"
-            className="px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-200 hover:scale-105"
-            style={{ background: 'var(--brand)', color: '#0a0a0f' }}
+            className="px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-200 hover:scale-105 hover:shadow-lg"
+            style={{ background: 'var(--brand)', color: '#ffffff' }}
           >
             View My Work
           </a>
           <a
             href="#contact"
-            className="px-6 py-3 rounded-xl font-semibold text-sm border transition-all duration-200 hover:bg-[rgba(99,102,241,0.08)]"
-            style={{ borderColor: 'var(--border)', color: 'var(--text)' }}
+            className="px-6 py-3 rounded-xl font-semibold text-sm border transition-all duration-200 hover:bg-[rgba(37,99,235,0.06)]"
+            style={{ borderColor: 'rgba(37,99,235,0.3)', color: 'var(--brand)' }}
           >
             Get In Touch
           </a>

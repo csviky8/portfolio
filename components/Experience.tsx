@@ -113,7 +113,7 @@ export default function Experience() {
                 style={{
                   borderColor: exp.current ? 'var(--brand)' : 'var(--border)',
                   background: exp.current ? 'var(--brand)' : 'var(--bg)',
-                  boxShadow: exp.current ? '0 0 12px rgba(22,181,112,0.5)' : 'none',
+                  boxShadow: exp.current ? '0 0 12px rgba(37,99,235,0.3)' : 'none',
                 }}
               />
 
@@ -128,7 +128,7 @@ export default function Experience() {
                       {exp.current && (
                         <span
                           className="text-xs px-2 py-0.5 rounded-full font-mono"
-                          style={{ background: 'rgba(22,181,112,0.15)', color: 'var(--brand)' }}
+                          style={{ background: 'rgba(37,99,235,0.1)', color: 'var(--brand)' }}
                         >
                           Current
                         </span>
@@ -157,7 +157,7 @@ export default function Experience() {
                     <span
                       key={t}
                       className="text-xs px-2 py-1 rounded-md font-mono border"
-                      style={{ borderColor: 'var(--border)', color: 'var(--text-muted)', background: 'rgba(22,181,112,0.04)' }}
+                      style={{ borderColor: 'var(--border)', color: 'var(--text-muted)', background: 'var(--bg3)' }}
                     >
                       {t}
                     </span>

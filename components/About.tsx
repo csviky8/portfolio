@@ -62,7 +62,7 @@ export default function About() {
                 <span
                   key={s}
                   className="px-3 py-1 rounded-full text-xs border"
-                  style={{ borderColor: 'var(--border)', color: 'var(--text-muted)', background: 'rgba(22,181,112,0.04)' }}
+                  style={{ borderColor: 'var(--border)', color: 'var(--text-muted)', background: 'var(--bg3)' }}
                 >
                   {s}
                 </span>

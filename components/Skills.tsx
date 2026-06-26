@@ -121,7 +121,7 @@ export default function Skills() {
                     </div>
                     <div
                       className="h-1 rounded-full overflow-hidden"
-                      style={{ background: 'rgba(22,181,112,0.1)' }}
+                      style={{ background: 'rgba(37,99,235,0.08)' }}
                     >
                       <div
                         className="skill-bar-fill h-full rounded-full"

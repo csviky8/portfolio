@@ -5,14 +5,14 @@
 @tailwind utilities;
 
 :root {
-  --brand: #6366f1;
-  --brand-dim: #4f46e5;
-  --bg: #0a0a0f;
-  --bg2: #0f0f1a;
-  --bg3: #13131f;
-  --border: rgba(99, 102, 241, 0.15);
-  --text: #e2e8f0;
-  --text-muted: #94a3b8;
+  --brand: #2563eb;
+  --brand-dim: #1d4ed8;
+  --bg: #ffffff;
+  --bg2: #f8fafc;
+  --bg3: #f1f5f9;
+  --border: rgba(0, 0, 0, 0.08);
+  --text: #0f172a;
+  --text-muted: #64748b;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -26,9 +26,9 @@ body {
   overflow-x: hidden;
 }
 
-::selection { background: rgba(99, 102, 241, 0.3); color: #fff; }
+::selection { background: rgba(37, 99, 235, 0.15); color: var(--text); }
 ::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-track { background: var(--bg2); }
 ::-webkit-scrollbar-thumb { background: var(--brand); border-radius: 2px; }
 
 .section-reveal {
@@ -38,15 +38,15 @@ body {
 }
 .section-reveal.visible { opacity: 1; transform: translateY(0); }
 
-.glow-text { text-shadow: 0 0 40px rgba(99, 102, 241, 0.4); }
+.glow-text { text-shadow: none; }
 
 .card-hover {
   transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 .card-hover:hover {
   transform: translateY(-4px);
-  border-color: rgba(99, 102, 241, 0.5) !important;
-  box-shadow: 0 12px 40px rgba(99, 102, 241, 0.12);
+  border-color: rgba(37, 99, 235, 0.3) !important;
+  box-shadow: 0 12px 40px rgba(37, 99, 235, 0.08);
 }
 
 .nav-link {
@@ -83,8 +83,8 @@ body {
 
 .grid-bg {
   background-image:
-    linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(37, 99, 235, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 99, 235, 0.04) 1px, transparent 1px);
   background-size: 50px 50px;
 }
 
