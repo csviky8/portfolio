@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Sora, Fira_Code } from 'next/font/google'
 import './globals.css'
 import Script from 'next/script'
+import { ThemeProvider } from '@/components/ThemeProvider'
 
 const sora = Sora({ subsets: ['latin'], variable: '--font-sora', display: 'swap' })
 const firaCode = Fira_Code({ subsets: ['latin'], variable: '--font-fira', display: 'swap' })
@@ -37,7 +38,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             gtag('config', 'G-3DGMNR215E');
           `}
         </Script>
-        {children}
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   )

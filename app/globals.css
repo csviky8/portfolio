@@ -19,6 +19,38 @@
   --text-dim: #4a5568;
 }
 
+/* ── Light mode ── */
+[data-theme='light'] {
+  --brand: #5b52e8;
+  --brand-2: #7c3aed;
+  --brand-glow: rgba(91, 82, 232, 0.25);
+  --bg: #fafafa;
+  --bg2: #f3f4f6;
+  --bg3: #e9eaec;
+  --glass: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --border: rgba(91, 82, 232, 0.2);
+  --text: #0f0f1a;
+  --text-muted: #4b5563;
+  --text-dim: #9ca3af;
+}
+
+[data-theme='light'] body::before { opacity: 0.1; }
+[data-theme='light'] .dot-bg {
+  background-image: radial-gradient(rgba(91, 82, 232, 0.1) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+[data-theme='light'] .glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(0, 0, 0, 0.07);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+}
+[data-theme='light'] .glow-card:hover {
+  box-shadow: 0 20px 50px rgba(91, 82, 232, 0.12);
+}
+[data-theme='light'] ::-webkit-scrollbar-track { background: var(--bg2); }
+[data-theme='light'] ::selection { background: rgba(91, 82, 232, 0.15); color: var(--text); }
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 
