@@ -46,7 +46,7 @@ export default function Hero() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse 60% 50% at 50% 0%, rgba(22,181,112,0.12) 0%, transparent 70%)',
+            'radial-gradient(ellipse 60% 50% at 50% 0%, rgba(99,102,241,0.12) 0%, transparent 70%)',
         }}
       />
 
@@ -54,14 +54,14 @@ export default function Hero() {
       <div
         className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full pointer-events-none"
         style={{
-          background: 'radial-gradient(circle, rgba(22,181,112,0.06) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(99,102,241,0.06) 0%, transparent 70%)',
           animation: 'float 8s ease-in-out infinite',
         }}
       />
       <div
         className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full pointer-events-none"
         style={{
-          background: 'radial-gradient(circle, rgba(22,181,112,0.04) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(99,102,241,0.04) 0%, transparent 70%)',
           animation: 'float 12s ease-in-out infinite reverse',
         }}
       />
@@ -79,7 +79,7 @@ export default function Hero() {
           className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono mb-8 border"
           style={{
             borderColor: 'var(--border)',
-            background: 'rgba(22,181,112,0.06)',
+            background: 'rgba(99,102,241,0.06)',
             color: 'var(--brand)',
           }}
         >
@@ -145,13 +145,13 @@ export default function Hero() {
           <a
             href="#projects"
             className="px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-200 hover:scale-105"
-            style={{ background: 'var(--brand)', color: '#050d0a' }}
+            style={{ background: 'var(--brand)', color: '#0a0a0f' }}
           >
             View My Work
           </a>
           <a
             href="#contact"
-            className="px-6 py-3 rounded-xl font-semibold text-sm border transition-all duration-200 hover:bg-[rgba(22,181,112,0.08)]"
+            className="px-6 py-3 rounded-xl font-semibold text-sm border transition-all duration-200 hover:bg-[rgba(99,102,241,0.08)]"
             style={{ borderColor: 'var(--border)', color: 'var(--text)' }}
           >
             Get In Touch
