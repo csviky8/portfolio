@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import Script from 'next/script'
 
 export const metadata: Metadata = {
   title: 'Vignesh R | Senior PHP Developer',
@@ -22,7 +23,18 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="grid-bg">{children}</body>
+      <body className="grid-bg">
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-3DGMNR215E" strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-3DGMNR215E');
+          `}
+        </Script>
+        {children}
+      </body>
     </html>
   )
 }
