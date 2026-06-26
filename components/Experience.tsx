@@ -156,7 +156,7 @@ export default function Experience() {
                   {exp.tech.map((t) => (
                     <span
                       key={t}
-                      className="text-xs px-2 py-1 rounded-md font-mono border"
+                  className="text-xs px-2 py-1 rounded-md font-mono border tag-hover"
                       style={{ borderColor: 'var(--border)', color: 'var(--text-muted)', background: 'var(--bg3)' }}
                     >
                       {t}

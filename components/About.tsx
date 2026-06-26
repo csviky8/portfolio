@@ -19,7 +19,7 @@ export default function About() {
       (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add('visible')),
       { threshold: 0.1 }
     )
-    ref.current?.querySelectorAll('.section-reveal').forEach((el) => observer.observe(el))
+    ref.current?.querySelectorAll('.section-reveal, .reveal-left, .reveal-right').forEach((el) => observer.observe(el))
     return () => observer.disconnect()
   }, [])
 
@@ -36,7 +36,7 @@ export default function About() {
 
       <div className="grid md:grid-cols-2 gap-12 items-start">
         {/* Left - bio */}
-        <div className="section-reveal space-y-5">
+        <div className="reveal-left space-y-5">
           <p style={{ color: 'var(--text-muted)', lineHeight: '1.8' }}>
             I&apos;m a <span style={{ color: 'var(--text)' }}>Senior PHP Developer</span> with over{' '}
             <span style={{ color: 'var(--brand)' }}>8 years of hands-on experience</span> building robust
@@ -61,7 +61,7 @@ export default function About() {
               {['Communication', 'Team Player', 'Problem Solving', 'Adaptability', 'Work Under Pressure', 'Self-motivated'].map((s) => (
                 <span
                   key={s}
-                  className="px-3 py-1 rounded-full text-xs border"
+                  className="px-3 py-1 rounded-full text-xs border tag-hover"
                   style={{ borderColor: 'var(--border)', color: 'var(--text-muted)', background: 'var(--bg3)' }}
                 >
                   {s}
@@ -72,7 +72,7 @@ export default function About() {
         </div>
 
         {/* Right - info card */}
-        <div className="section-reveal">
+        <div className="reveal-right">
           <div
             className="rounded-2xl border p-6 space-y-4"
             style={{ borderColor: 'var(--border)', background: 'var(--bg2)' }}
