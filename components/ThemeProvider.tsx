@@ -6,6 +6,7 @@ const ThemeContext = createContext<{ theme: Theme; toggle: () => void }>({ theme
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>('dark')
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
     const saved = localStorage.getItem('theme') as Theme | null
@@ -13,6 +14,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     const initial = saved || preferred
     setTheme(initial)
     document.documentElement.setAttribute('data-theme', initial)
+    setMounted(true)
   }, [])
 
   const toggle = () => {
@@ -20,6 +22,15 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     setTheme(next)
     localStorage.setItem('theme', next)
     document.documentElement.setAttribute('data-theme', next)
+  }
+
+  // Prevent flash: render children only after mount
+  if (!mounted) {
+    return (
+      <ThemeContext.Provider value={{ theme, toggle }}>
+        <div style={{ visibility: 'hidden' }}>{children}</div>
+      </ThemeContext.Provider>
+    )
   }
 
   return <ThemeContext.Provider value={{ theme, toggle }}>{children}</ThemeContext.Provider>
